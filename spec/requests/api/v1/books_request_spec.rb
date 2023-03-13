@@ -107,6 +107,6 @@ RSpec.describe "Books API" do
 
     expect(response).to be_successful
     expect(Book.count).to eq(0)
-    expect(Book.find(book.id)).to raise_error(ActiveRecord::RecordNotFound)
+    expect{ Book.find(book.id) }.to raise_error(ActiveRecord::RecordNotFound)
   end
 end
